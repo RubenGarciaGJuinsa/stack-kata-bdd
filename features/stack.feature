@@ -26,3 +26,10 @@ Feature: Test a stack
     When I insert the element "element"
     And I insert the element "second"
     Then I pull the element "second"
+
+  Scenario: Push 2 elements and pull both
+    Given an empty stack
+    When I insert the element "element"
+    And I insert the element "second"
+    Then I pull the element "second"
+    And I pull the element "element"
