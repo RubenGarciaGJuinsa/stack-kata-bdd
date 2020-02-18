@@ -41,15 +41,15 @@ class FeatureContext implements Context
      * @When /^I insert the element "([^"]*)"$/
      * @Then /^I insert the element "([^"]*)" and expect an exception with message "([^"]*)"$/
      */
-    public function iInsertTheElement($element, $arg2 = '')
+    public function iInsertTheElement($element, $expectedExceptionMessage = '')
     {
         try {
             $this->stack->push($element);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             if (empty($e)) {
                 throw $e;
             }
-            TestCase::assertEquals($arg2, $e->getMessage());
+            TestCase::assertEquals($expectedExceptionMessage, $e->getMessage());
         }
     }
 }
