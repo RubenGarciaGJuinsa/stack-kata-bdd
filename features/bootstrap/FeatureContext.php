@@ -14,10 +14,11 @@ class FeatureContext implements Context
     /**
      * @Given /^an empty stack$/
      * @Given /^an empty stack of size (\d+)$/
+     * @param int $stackSize
      */
-    public function anEmptyStack($size = 10)
+    public function anEmptyStack($stackSize = 10)
     {
-        $this->stack = new Stack($size);
+        $this->stack = new Stack($stackSize);
     }
 
     /**
