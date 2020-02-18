@@ -19,5 +19,4 @@ Feature: Test a stack
 
   Scenario: Push an element in a stack without space
     Given an empty stack of size 0
-    When I insert the element "element"
-    Then I give an Stack Overflow Exception
+    Then I insert the element "element" and expect an "Stack Overflow" exception
