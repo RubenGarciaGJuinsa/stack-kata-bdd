@@ -54,18 +54,14 @@ class FeatureContext implements Context
     }
 
     /**
+     * @When /^I pull an element$/
      * @Then /^I pull the element "([^"]*)"$/
      */
-    public function iPullTheElement($arg1)
+    public function iPullTheElement($arg1 = null)
     {
-        TestCase::assertEquals($arg1, $this->stack->pull());
-    }
+        $stackElement = $this->stack->pull();
 
-    /**
-     * @When /^I pull an element$/
-     */
-    public function iPullAnElement()
-    {
-        $this->stack->pull();
+        if (!is_null($arg1))
+            TestCase::assertEquals($arg1, $stackElement);
     }
 }
