@@ -1,22 +1,20 @@
 <?php
 
 use Behat\Behat\Context\Context;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use Kata\Stack;
 
 /**
  * Defines application features from the specific context.
  */
 class FeatureContext implements Context
 {
+    protected $stack;
+
     /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
+     * @Given /^an empty stack$/
      */
-    public function __construct()
+    public function anEmptyStack()
     {
+        $this->stack = new Stack();
     }
 }
