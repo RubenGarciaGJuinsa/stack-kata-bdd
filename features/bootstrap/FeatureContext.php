@@ -39,20 +39,16 @@ class FeatureContext implements Context
 
     /**
      * @When /^I insert the element "([^"]*)"$/
-     */
-    public function iInsertTheElement($element)
-    {
-        $this->stack->push($element);
-    }
-
-    /**
      * @Then /^I insert the element "([^"]*)" and expect an exception with message "([^"]*)"$/
      */
-    public function iInsertTheElementAndExpectAnException($arg1, $arg2)
+    public function iInsertTheElement($element, $arg2 = '')
     {
         try {
-            $this->stack->push($arg1);
+            $this->stack->push($element);
         } catch (\Exception $e) {
+            if (empty($e)) {
+                throw $e;
+            }
             TestCase::assertEquals($arg2, $e->getMessage());
         }
     }
