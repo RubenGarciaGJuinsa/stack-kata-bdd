@@ -2,6 +2,7 @@
 
 use Behat\Behat\Context\Context;
 use Kata\Stack;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Defines application features from the specific context.
@@ -12,18 +13,11 @@ class FeatureContext implements Context
 
     /**
      * @Given /^an empty stack$/
-     */
-    public function anEmptyStack()
-    {
-        $this->stack = new Stack();
-    }
-
-    /**
      * @Given /^an empty stack of size (\d+)$/
      */
-    public function anEmptyStackOfSize($arg1)
+    public function anEmptyStack($size = 10)
     {
-        $this->stack = new Stack($arg1);
+        $this->stack = new Stack($size);
     }
 
     /**
@@ -31,6 +25,6 @@ class FeatureContext implements Context
      */
     public function theSizeOfTheStackIs($expectedSize)
     {
-        \PHPUnit\Framework\TestCase::assertEquals($expectedSize, $this->stack->getSize());
+        TestCase::assertEquals($expectedSize, $this->stack->getSize());
     }
 }

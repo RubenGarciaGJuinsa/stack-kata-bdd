@@ -18,7 +18,7 @@ class Stack
         return $this->size;
     }
 
-    public function __construct($size = 10)
+    public function __construct($size)
     {
         $this->size = $size;
     }
