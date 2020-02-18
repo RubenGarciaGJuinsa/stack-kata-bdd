@@ -32,8 +32,8 @@ class FeatureContext implements Context
     /**
      * @Then /^the current position is (\d+)$/
      */
-    public function theCurrentPositionIs($arg1)
+    public function theCurrentPositionIs($expectedPosition)
     {
-        TestCase::assertEquals($arg1, $this->stack->getPosition());
+        TestCase::assertEquals($expectedPosition, $this->stack->getPosition());
     }
 }
