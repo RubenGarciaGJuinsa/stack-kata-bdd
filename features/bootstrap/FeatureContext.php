@@ -36,4 +36,12 @@ class FeatureContext implements Context
     {
         TestCase::assertEquals($expectedPosition, $this->stack->getPosition());
     }
+
+    /**
+     * @When /^I insert the element "([^"]*)"$/
+     */
+    public function iInsertTheElement($arg1)
+    {
+        $this->stack->push($arg1);
+    }
 }

@@ -12,12 +12,9 @@ class Stack
 
     protected int $position = 0;
 
-    /**
-     * @return int
-     */
-    public function getPosition(): int
+    public function __construct($size)
     {
-        return $this->position;
+        $this->size = $size;
     }
 
     /**
@@ -28,8 +25,17 @@ class Stack
         return $this->size;
     }
 
-    public function __construct($size)
+    public function push($element)
     {
-        $this->size = $size;
+        $stack[$this->getPosition() + 1] = $element;
+        $this->position++;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
     }
 }
