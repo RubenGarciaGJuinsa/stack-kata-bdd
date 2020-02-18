@@ -33,3 +33,8 @@ Feature: Test a stack
     And I insert the element "second"
     Then I pull the element "second"
     And I pull the element "element"
+
+  Scenario: Pull and empty stack and nothing happens
+    Given an empty stack
+    When I pull an element
+    Then the current position is 0
