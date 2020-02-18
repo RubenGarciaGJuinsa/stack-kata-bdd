@@ -40,8 +40,8 @@ class FeatureContext implements Context
     /**
      * @When /^I insert the element "([^"]*)"$/
      */
-    public function iInsertTheElement($arg1)
+    public function iInsertTheElement($element)
     {
-        $this->stack->push($arg1);
+        $this->stack->push($element);
     }
 }
