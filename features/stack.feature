@@ -16,3 +16,8 @@ Feature: Test a stack
     Then the current position is 0
     When I insert the element "element"
     Then the current position is 1
+
+  Scenario: Push an element in a stack without space
+    Given an empty stack of size 0
+    When I insert the element "element"
+    Then I give an Stack Overflow Exception
