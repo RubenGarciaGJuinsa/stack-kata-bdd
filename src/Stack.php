@@ -27,8 +27,11 @@ class Stack
 
     public function push($element)
     {
-        $stack[$this->getPosition() + 1] = $element;
+        if ($this->getPosition() >= $this->getSize())
+            throw new \Exception('Stack Overflow');
+
         $this->position++;
+        $stack[$this->getPosition()] = $element;
     }
 
     /**
