@@ -28,4 +28,12 @@ class FeatureContext implements Context
     {
         TestCase::assertEquals($expectedSize, $this->stack->getSize());
     }
+
+    /**
+     * @Then /^the current position is (\d+)$/
+     */
+    public function theCurrentPositionIs($arg1)
+    {
+        TestCase::assertEquals($arg1, $this->stack->getPosition());
+    }
 }

@@ -10,6 +10,16 @@ class Stack
 
     protected int $size;
 
+    protected int $position = 0;
+
+    /**
+     * @return int
+     */
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
     /**
      * @return int
      */
