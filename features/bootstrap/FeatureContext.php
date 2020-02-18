@@ -52,4 +52,12 @@ class FeatureContext implements Context
             TestCase::assertEquals($expectedExceptionMessage, $e->getMessage());
         }
     }
+
+    /**
+     * @Then /^I pull the element "([^"]*)"$/
+     */
+    public function iPullTheElement($arg1)
+    {
+        TestCase::assertEquals($arg1, $this->stack->pull());
+    }
 }

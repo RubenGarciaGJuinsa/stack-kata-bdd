@@ -17,21 +17,14 @@ class Stack
         $this->size = $size;
     }
 
-    /**
-     * @return int
-     */
-    public function getSize(): int
-    {
-        return $this->size;
-    }
-
     public function push($element)
     {
-        if ($this->getPosition() >= $this->getSize())
+        if ($this->getPosition() >= $this->getSize()) {
             throw new \Exception('Stack Overflow');
+        }
 
         $this->position++;
-        $stack[$this->getPosition()] = $element;
+        $this->stack[$this->getPosition()] = $element;
     }
 
     /**
@@ -40,5 +33,21 @@ class Stack
     public function getPosition(): int
     {
         return $this->position;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSize(): int
+    {
+        return $this->size;
+    }
+
+    public function pull()
+    {
+        $element = $this->stack[$this->getPosition()];
+        $this->position--;
+
+        return $element;
     }
 }
