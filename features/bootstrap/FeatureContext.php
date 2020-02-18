@@ -60,4 +60,12 @@ class FeatureContext implements Context
     {
         TestCase::assertEquals($arg1, $this->stack->pull());
     }
+
+    /**
+     * @When /^I pull an element$/
+     */
+    public function iPullAnElement()
+    {
+        $this->stack->pull();
+    }
 }

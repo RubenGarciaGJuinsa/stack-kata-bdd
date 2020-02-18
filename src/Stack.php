@@ -45,6 +45,9 @@ class Stack
 
     public function pull()
     {
+        if ($this->getPosition() <= 0)
+            return;
+
         $element = $this->stack[$this->getPosition()];
         $this->position--;
 
